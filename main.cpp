@@ -24,13 +24,13 @@ bool downPressed = false;
 
 void zoom() {
     scale -= 0.02 * (1.001-exp(-(scale)*(scale)));
-    scale = abs(scale);
+    scale = scale > 0 ? scale : -scale;
     zoomed = true;
 }
 
 void dezoom() {
     scale += 0.02 * (1.001-exp(-(scale)*(scale)));
-    scale = abs(scale);
+    scale = scale > 0 ? scale : -scale;
     zoomed = true;
 }
 
